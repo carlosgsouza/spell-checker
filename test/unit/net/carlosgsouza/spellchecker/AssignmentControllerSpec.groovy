@@ -9,7 +9,7 @@ class AssignmentControllerSpec extends Specification {
 
 	AssignmentController controller = new AssignmentController()
 	
-	def "should evaluate assignments"() {
+	def "should evaluate assignments when they are created"() {
 		given:
 		controller.spellCheckService = Mock(SpellCheckService)
 		
@@ -20,7 +20,7 @@ class AssignmentControllerSpec extends Specification {
 		Assignment.list() == []
 		
 		when:
-		controller.submit()
+		controller.save()
 		
 		then:
 		1 * controller.spellCheckService.getErrorCount("A text submitted by a student") >> 0
