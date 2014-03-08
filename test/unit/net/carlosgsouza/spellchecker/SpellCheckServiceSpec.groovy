@@ -1,10 +1,7 @@
-package net.carlosgsouza
+package net.carlosgsouza.spellchecker
 
 import spock.lang.Specification;
 
 class SpellCheckServiceSpec extends Specification {
 
-    void testSomething() {
-        fail "Implement me"
-    }
 }

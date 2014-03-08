@@ -17,8 +17,12 @@ class AssignmentSpec extends Specification {
 	}
 	
 	def "should count the words when we create an assignment from a text"() {
+		given:
+		Assignment assignment = new Assignment()
+		assignment.text = text
+		
 		expect:
-		new Assignment(text).wordCount == words
+		assignment.wordCount == words
 		
 		where:
 		words	| text
@@ -28,6 +32,24 @@ class AssignmentSpec extends Specification {
 		2		| "hello world"
 		2		| "hello world!!"
 		3		| "one two three"
+	}
+	
+	def "should update the word count if we change the text of an assignment"() {
+		given:
+		Assignment assignment = new Assignment()
+		
+		when:
+		assignment.text = "hello world"
+		
+		then:
+		assignment.wordCount == 2
+		
+		when:
+		assignment.text = "hello beautiful world"
+		
+		then:
+		assignment.wordCount == 3
+		
 	}
 	
 }
