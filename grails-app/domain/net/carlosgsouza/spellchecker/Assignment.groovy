@@ -5,6 +5,7 @@ class Assignment {
 	String text
 	int wordCount
 	int errorCount
+	double score
 
     static constraints = {
 		text blank:false

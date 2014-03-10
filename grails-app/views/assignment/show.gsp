@@ -31,20 +31,18 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${assignmentInstance?.errorCount}">
 				<li class="fieldcontain">
 					<span id="errorCount-label" class="property-label"><g:message code="assignment.errorCount.label" default="Error Count" /></span>
 					
 						<span class="property-value" aria-labelledby="errorCount-label"><g:fieldValue bean="${assignmentInstance}" field="errorCount"/></span>
 					
 				</li>
-				</g:if>
 			
-				<g:if test="${assignmentInstance?.wordCount}">
+				<g:if test="${assignmentInstance?.score}">
 				<li class="fieldcontain">
-					<span id="wordCount-label" class="property-label"><g:message code="assignment.wordCount.label" default="Word Count" /></span>
+					<span id="wordCount-label" class="property-label">Score</span>
 					
-						<span class="property-value" aria-labelledby="wordCount-label"><g:fieldValue bean="${assignmentInstance}" field="wordCount"/></span>
+						<span class="property-value" aria-labelledby="wordCount-label"><g:fieldValue bean="${assignmentInstance}" field="score"/></span>
 					
 				</li>
 				</g:if>

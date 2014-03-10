@@ -9,14 +9,22 @@ import com.swabunga.spell.event.TeXWordFinder
 
 class SpellCheckService  {
 	
-	static SpellChecker spellChecker
-	static {
-		// This takes a long time to be initialized so we share it among all instances of the service
-		spellChecker = new SpellChecker(new SpellDictionaryHashMap(new File("dictionary/en.txt")))
+	SpellChecker spellCheckerInstance
+	
+	// We synchronize this method to avoid the spellchecker to be instantiated twice by two instances of this service
+	private synchronized SpellChecker createSpellChecker() {
+		if(spellCheckerInstance == null) {
+			spellCheckerInstance = new SpellChecker(new SpellDictionaryHashMap(new File("dictionary/en.txt")))
+		}
+		return spellCheckerInstance
 	}
 	
     int getErrorCount(String text) {
 		StringWordTokenizer tokenizer = new StringWordTokenizer(text, new TeXWordFinder());
-		return Math.max(0, spellChecker.checkSpelling(tokenizer))
+		
+		SpellChecker sc = createSpellChecker()
+		int checkResult = spellCheckerInstance.checkSpelling(tokenizer)
+		
+		return Math.max(0, checkResult)
     }
 }
