@@ -44,8 +44,12 @@
 						<span class="property-value" aria-labelledby="wordCount-label"><g:fieldValue bean="${assignmentInstance}" field="score"/></span>
 					
 				</li>
+				
+				<div id="remaining-characters" />
 			
 			</ol>
 		</div>
 	</body>
+	
+	
 </html>
