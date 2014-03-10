@@ -38,14 +38,12 @@
 					
 				</li>
 			
-				<g:if test="${assignmentInstance?.score}">
 				<li class="fieldcontain">
 					<span id="wordCount-label" class="property-label">Score</span>
 					
 						<span class="property-value" aria-labelledby="wordCount-label"><g:fieldValue bean="${assignmentInstance}" field="score"/></span>
 					
 				</li>
-				</g:if>
 			
 			</ol>
 		</div>

@@ -27,7 +27,7 @@
 					
 						<g:sortableColumn property="errorCount" title="${message(code: 'assignment.errorCount.label', default: 'Error Count')}" />
 					
-						<g:sortableColumn property="wordCount" title="${message(code: 'assignment.wordCount.label', default: 'Word Count')}" />
+						<g:sortableColumn property="score" title="Score" />
 					
 					</tr>
 				</thead>
@@ -39,7 +39,7 @@
 					
 						<td>${fieldValue(bean: assignmentInstance, field: "errorCount")}</td>
 					
-						<td>${fieldValue(bean: assignmentInstance, field: "wordCount")}</td>
+						<td>${fieldValue(bean: assignmentInstance, field: "score")}</td>
 					
 					</tr>
 				</g:each>

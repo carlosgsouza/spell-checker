@@ -17,7 +17,7 @@ class Assignment {
 	}
 	
 	double getScore() {
-		(wordCount == 0) ? 0.0d : (wordCount - errorCount)/((double)wordCount)
+		(wordCount == 0) ? 0 : (int)10 * (wordCount - errorCount)/((double)wordCount)
 	}
 	
 }

@@ -10,10 +10,10 @@ class AssignmentSpec extends Specification {
 		
 		where:
 		words	| errors	| score
-		0		| 0			| 0.0d
-		1		| 0			| 1.0d
-		1		| 1			| 0.0d
-		150		| 15		| 0.9d
+		0		| 0			| 0
+		1		| 0			| 10
+		1		| 1			| 0
+		150		| 15		| 9
 	}
 	
 	def "should count the words when we create an assignment from a text"() {
