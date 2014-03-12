@@ -5,10 +5,10 @@ class Assignment {
 	String text
 	int wordCount
 	int errorCount
-	double score
+	int score
 
     static constraints = {
-		text blank:false
+		text blank:false, size: 1..1000
     }
 	
 	void setText(String text) {
@@ -16,7 +16,7 @@ class Assignment {
 		this.wordCount = !text ? 0 : text.split("[ \t\n\\.,!?+-]").length
 	}
 	
-	double getScore() {
+	int getScore() {
 		(wordCount == 0) ? 0 : (int)10 * (wordCount - errorCount)/((double)wordCount)
 	}
 	

@@ -33,8 +33,9 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
-        // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-
+		test "org.gebish:geb-spock:0.9.2"
+		test "org.seleniumhq.selenium:selenium-firefox-driver:2.32.0"
+		
         compile 'net.sf.jazzy:jazzy-core:0.5.2'
     }
 
